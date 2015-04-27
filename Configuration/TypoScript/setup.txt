@@ -1,0 +1,114 @@
+plugin.tx_z3map {
+	view {
+		templateRootPath = {$plugin.tx_z3map.view.templateRootPath}
+		partialRootPath = {$plugin.tx_z3map.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_z3map.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_z3map.persistence.storagePid}
+	}
+	features {
+		# uncomment the following line to enable the new Property Mapper.
+		# rewrittenPropertyMapper = 1
+	}
+	settings{
+		includeJsInFooter = {$plugin.tx_z3map.settings.includeJsInFooter}
+
+		map {
+			mapLib = {$plugin.tx_z3map.settings.map.mapLib}
+			mapLibDraw = {$plugin.tx_z3map.settings.map.mapLibDraw}
+			jsFile = {$plugin.tx_z3map.settings.map.jsFile}
+			cssFile = {$plugin.tx_z3map.settings.map.cssFile}
+			markerMgntLib = {$plugin.tx_z3map.settings.map.markerMgntLib}
+			markerClstrLib = {$plugin.tx_z3map.settings.map.markerClstrLib}
+			initLat = {$plugin.tx_z3map.settings.map.initLat}
+			initLng = {$plugin.tx_z3map.settings.map.initLng}
+			initZoom = {$plugin.tx_z3map.settings.map.initZoom}
+			unit = {$plugin.tx_z3map.settings.map.unit}
+			outsourcePoiJson = 1
+			mapType = {$plugin.tx_z3map.settings.map.mapType}
+			defaultDistance = {$plugin.tx_z3map.settings.map.defaultDistance}
+			infoWindowWidth = {$plugin.tx_z3map.settings.map.infoWindowWidth}
+			height = {$plugin.tx_z3map.settings.map.height}
+			width = {$plugin.tx_z3map.settings.map.width}
+			marker{
+			icon {
+				url={$plugin.tx_z3map.settings.map.marker.icon.url}
+					size.height={$plugin.tx_z3map.settings.map.marker.icon.size.height}
+					size.width={$plugin.tx_z3map.settings.map.marker.icon.size.width}
+					anchor.x={$plugin.tx_z3map.settings.map.marker.icon.anchor.x}
+					anchor.y={$plugin.tx_z3map.settings.map.marker.icon.anchor.y}
+				}
+			}
+			controls{
+				scrollwheel=0
+				navigationControl=1
+				mapTypeControl=1
+				scaleControl=1
+				draggable=1
+			}
+			routing {
+				enable = 1
+				showRoutInMap = 1
+			}
+		}
+	}
+}
+
+
+tx_z3map_jSonMarkers = PAGE
+tx_z3map_jSonMarkers {
+	typeNum = 80000
+	config{
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:application/json
+		xhtml_cleaning = 0
+		admPanel = 0
+		admPanel.enable = 0
+		no_cache = 0
+		debug = 0	
+}
+	10 = USER
+	10{
+		userFunc = tx_extbase_core_bootstrap->run
+		vendorName = TYPO3
+
+		extensionName = Z3Map
+		pluginName = Map
+		controller = Poi
+		switchableControllerActions.Poi.1 = jsonlist
+
+		mvc < plugin.tx_z3map.mvc
+		settings < plugin.tx_z3map.settings
+		persistence < plugin.tx_z3map.persistence
+	}
+}
+
+tx_z3map_infoWindow = PAGE
+tx_z3map_infoWindow {
+	typeNum = 80001
+	config{
+		disableAllHeaderCode = 1
+		additionalHeaders = Content-type:application/json
+		xhtml_cleaning = 0
+		admPanel = 0
+		admPanel.enable = 0
+		no_cache = 1
+		debug = 0	
+}
+	10 = USER
+	10{
+		userFunc = tx_extbase_core_bootstrap->run
+		vendorName = TYPO3
+
+		extensionName = Z3Map
+		pluginName = Map
+		controller = Poi
+		action = infoWindow
+		switchableControllerActions.Poi.1 = infoWindow
+
+		mvc < plugin.tx_z3map.mvc
+		settings < plugin.tx_z3map.settings
+		persistence < plugin.tx_z3map.persistence
+	}
+}

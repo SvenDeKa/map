@@ -1,0 +1,24 @@
+
+{namespace v=Tx_Vhs_ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<f:flashMessages />
+	
+	{v:var.set(name: "mapId", value: "map_canvas_{v:random.number(minimum:100000, maximum:999999, minimumDecimals:false, maximumDecimals:false)}")}
+	
+	<f:alias map="{map:'{settings.map}'}">
+		<div id="{v:var.get(name:'mapId')}" style="height:{map.height}; width:{map.width}"
+			class="map_canvas mapready" data-clat="{map.initLat}" data-clng="{map.initLng}"
+			data-type="pois" data-infoWindowWidth="{map.infoWindowWidth}" data-initzoom="{map.initZoom}" data-maptype="{map.mapType}"
+			{f:if(condition:'{map.outsourcePoiJson}==1', then:'data-url="{f:uri.action(additionalParams:\'{type:80000}\')}" ', else:'data-src="{pois}" ')}
+			data-scrollwheel="{map.controls.scrollwheel}"
+			data-markeronclick="{map.marker.onClick}"
+			>
+		</div>
+	</f:alias>
+	
+</f:section>
+			{f:if(condition:'{map.marker}', then:' data-markeroptions="{map.marker}"')}
+			{f:if(condition:'{map.cluster}', then:' data-clusteroptions="{map.cluster}"')}

@@ -1,0 +1,71 @@
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+    </meta>
+	<sheets>
+		<sDEF>
+			<ROOT>
+				<TCEforms>
+					<sheetTitle>Function</sheetTitle>
+				</TCEforms>
+				<type>array</type>
+				<el>
+					<switchableControllerActions>
+						<TCEforms>
+							<label>Select function</label>
+							<config>
+								<type>select</type>
+								<items>
+									<numIndex index="0">
+										<numIndex index="0">Karte anzeigen</numIndex>
+										<numIndex index="1">Poi->map;Poi->search;Poi->route</numIndex>
+									</numIndex>
+								</items>
+							</config>
+						</TCEforms>
+					</switchableControllerActions>
+					
+					<settings.map.controls.scrollwheel>
+						<TCEforms>
+							<label>Zoomen per mausrad</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">ja</numIndex>
+										<numIndex index="1">1</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">nein</numIndex>
+										<numIndex index="1">0</numIndex>
+									</numIndex>
+								</items>
+								<default>1</default>
+							</config>
+						</TCEforms> 
+					</settings.map.controls.scrollwheel>
+					
+					<settings.map.marker.onClick>
+						<TCEforms>
+							<label>Klick Auf Marker</label>
+							<config>
+								<type>select</type>
+								<items type="array">
+									<numIndex index="0" type="array">
+										<numIndex index="0">ohne Funktion</numIndex>
+										<numIndex index="1">false</numIndex>
+									</numIndex>
+									<numIndex index="1" type="array">
+										<numIndex index="0">öffnet Adresse in Info-Blase</numIndex>
+										<numIndex index="1">infoWindow</numIndex>
+									</numIndex>
+								</items>
+								<default>1</default>
+							</config>
+						</TCEforms> 
+					</settings.map.marker.onClick>
+				</el>
+			</ROOT>
+		</sDEF>
+	</sheets>
+</T3DataStructure>

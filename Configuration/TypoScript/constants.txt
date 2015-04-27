@@ -1,0 +1,46 @@
+plugin.tx_z3map {
+	view {
+		# cat=plugin.tx_z3map/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:z3_map/Resources/Private/Templates/
+		# cat=plugin.tx_z3map/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:z3_map/Resources/Private/Partials/
+		# cat=plugin.tx_z3map/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:z3_map/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_z3map//a; type=string; label=Default storage PID
+		storagePid = 43
+	}
+
+	settings{
+
+		map {
+			mapLib = https://maps.google.com/maps/api/js?sensor=true
+			mapLibDraw = https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=drawing
+			jsFile = EXT:z3_map/Resources/Public/Js/z3_map.js
+			cssFile = EXT:z3_map/Resources/Public/Css/z3_map.less
+			markerMgntLib = EXT:z3_map/Resources/Public/Js/mapmanager.js
+			markerClstrLib = EXT:z3_map/Resources/Public/Js/markercluster.js
+			initLat = 48.37071
+			initLng = 10.89475
+			initZoom = 9
+			# Unit: M for Miles or KM for kilometers, Default: KM
+			unit = KM
+			# hybrid, satellite, terrain or roadmap
+			mapType = satellite
+			defaultDistance = 100
+			infoWindowWidth = 360
+			height = 420px
+			width = 100%
+			marker{
+				icon{
+					url=EXT:z3_map/Resources/Public/Icons/map_marker_53x77.png
+					size.width=53
+					size.height=77
+					anchor.x=0
+					anchor.y=0
+				}
+			}
+		}
+	}
+}

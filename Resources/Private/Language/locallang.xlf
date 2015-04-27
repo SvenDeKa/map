@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2014-03-18T20:29:00Z" product-name="z3_map">
+		<header/>
+		<body>
+
+			<trans-unit id="tx_z3map_domain_model_poi">
+				<source>Point of Interest</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_poi.name">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_poi.address">
+				<source>address</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_poi.postalcode">
+				<source>postalcode</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_poi.city">
+				<source>city</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_poi.country">
+				<source>country</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_poi.lat">
+				<source>lat</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_poi.lng">
+				<source>lng</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_poi.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_poi.categories">
+				<source>categories</source>
+			</trans-unit>
+			
+			<trans-unit id="tx_z3map_domain_model_category">
+				<source>Category of point of interest</source>
+			</trans-unit>
+			<trans-unit id="tx_z3map_domain_model_category.name">
+				<source>Name of the category</source>
+			</trans-unit>
+			
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,37 @@
+
+
+.map_canvas{
+	
+	.gmnoprint {
+		//	ie10+ panControl-bug 
+		//	(engl. und de.)
+		div[title^=Pan],
+		div[title^=Nach] {
+			opacity: 0 !important;
+		}
+
+	}
+
+	.infowindow{
+		max-width: 380px;
+		h1{
+			font-size: 18px !important;
+			border-bottom: 1px solid #dfe0e0;
+			padding-bottom: 15px;
+			margin-bottom: 15px;
+		}
+		.contenttable tr th {
+			padding-right: 15px;
+			text-align: left;
+		}
+		input {
+			display: inline-block;
+			/*line-height: 1.47;*/
+		}
+		.btn {
+			margin-top: -3px;
+			border: none;
+		}
+		
+	}
+}

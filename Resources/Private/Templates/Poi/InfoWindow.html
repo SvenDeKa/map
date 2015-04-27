@@ -1,0 +1,33 @@
+<f:layout name="Default" />
+<f:section name="main">
+
+<f:flashMessages />
+
+<div  class="tx_z3map infowindow" >
+	<h1>{poi.name}</h1>
+	<f:if condition="{poi.description}">
+		<f:then>
+			<f:format.html parseFuncTSPath="lib.parseFuncRTE">{poi.description}</f:format.html>	
+		</f:then>
+		<f:else>
+			<p>
+				{poi.address}<br>
+				{poi.postalcode} {poi.city}<br>
+				{poi.country}
+			</p>
+		</f:else>
+	</f:if>
+	<hr>
+	<p>
+		<form class="location-routing" target="_blank" action="http://maps.google.com/maps" method="GET">
+			<input type="hidden" value="Arnulfstraße 27, 80335 München" name="daddr"> 
+			<div class="formline">
+				<label for="map-saddr">Ihre Adresse</label>
+				<input type="text" id="map-saddr" placeholder="Straße, Ort" name="saddr">
+				<input type="submit" class="btn btn-primary" value="Route planen">
+			</div>
+		</form>
+	</p>
+</div>
+
+</f:section>

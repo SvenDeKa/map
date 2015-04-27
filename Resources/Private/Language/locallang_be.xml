@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for backend of news</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="pi1_title">Map</label>
+			<label index="pi1_plus_wiz_description">Stellt eine GoogleMap-Karte mit Markern dar</label>
+		</languageKey>
+	</data>
+</T3locallang>
